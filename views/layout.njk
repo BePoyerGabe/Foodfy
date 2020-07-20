@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <meta name="description" content="As melhores receitas, dos melhores chefs do mundo inteiro">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="layout.css">
+
+        {% block head %}
+            <title>Document</title>
+        {% endblock head %}
+    </head>
+    <body>
+
+        <div class="wrapper-width">
+            {% include "_header.njk"%}
+
+            {% block content %}{% endblock content %}
+
+        </div>
+
+        {% include "_footer.njk"%}
+    </body>
+</html>
