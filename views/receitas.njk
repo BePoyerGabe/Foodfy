@@ -1,4 +1,5 @@
 {% extends 'layout.njk' %}
+{% import './_card.njk' as myCards%}
 
 {% block head %}
     <meta name="description" content="As melhores receitas, dos melhores chefs do mundo inteiro">
@@ -9,104 +10,14 @@
 
 {% block content %}
     <main class="cards">
-        <div class="card burger">
-            <img src="/assets/burger.png" alt="burger">
-            <div class="card-info">
-                <p>Triplo bacon burger</p>
-                <span>por Jorge Relato</span>
-            </div>
-        </div>
+        {% for card in data %}
+            {{myCards.createCard(card)}}
+        {% endfor %}
 
-        <div class="card pizza">
-            <img src="/assets/pizza.png" alt="pizza">
-            <div class="card-info">
-                <p>Pizza 4 estações</p>
-                <span>por Fabiana Melo</span>
-            </div>
-        </div>
-
-        <div class="card espaguete">
-            <img src="/assets/espaguete.png" alt="espaguete">
-            <div class="card-info">
-                <p>Espaguete ao alho</p>
-                <span>por Júlia Kinoto</span>
-            </div>
-        </div>
-
-        <div class="card lasanha">
-            <img src="/assets/lasanha.png" alt="lasanha">
-            <div class="card-info">
-                <p>Lasanha mac n' cheese</p>
-                <span>por Juliano Vieira</span>
-            </div>
-        </div>
-
-        <div class="card doce">
-            <img src="/assets/doce.png" alt="pão do céu">
-            <div class="card-info">
-                <p>Docinhos pão-do-céu</p>
-                <span>por Ricardo Golvea</span>
-            </div>
-        </div>
-
-        <div class="card asinhas">
-            <img src="/assets/asinhas.png" alt="asinha">
-            <div class="card-info">
-                <p>Asinha de frango ao barbecue</p>
-                <span>por Vania Steroski</span>
-            </div>
-        </div>
-
-        <div class="card burger">
-            <img src="/assets/burger.png" alt="burger">
-            <div class="card-info">
-                <p>Triplo bacon burger</p>
-                <span>por Jorge Relato</span>
-            </div>
-        </div>
-
-        <div class="card pizza">
-            <img src="/assets/pizza.png" alt="pizza">
-            <div class="card-info">
-                <p>Pizza 4 estações</p>
-                <span>por Fabiana Melo</span>
-            </div>
-        </div>
-
-        <div class="card espaguete">
-            <img src="/assets/espaguete.png" alt="espaguete">
-            <div class="card-info">
-                <p>Espaguete ao alho</p>
-                <span>por Júlia Kinoto</span>
-            </div>
-        </div>
-
-        <div class="card lasanha">
-            <img src="/assets/lasanha.png" alt="lasanha">
-            <div class="card-info">
-                <p>Lasanha mac n' cheese</p>
-                <span>por Juliano Vieira</span>
-            </div>
-        </div>
-
-        <div class="card doce">
-            <img src="/assets/doce.png" alt="pão do céu">
-            <div class="card-info">
-                <p>Docinhos pão-do-céu</p>
-                <span>por Ricardo Golvea</span>
-            </div>
-        </div>
-
-        <div class="card asinhas">
-            <img src="/assets/asinhas.png" alt="asinha">
-            <div class="card-info">
-                <p>Asinha de frango ao barbecue</p>
-                <span>por Vania Steroski</span>
-            </div>
-        </div>
     </main>
 </div>
 
+{# 
 <div class="modal-camada">
     <div class="modal">
         <div class="close-modal">
@@ -118,7 +29,7 @@
             <span></span>
         </div>
     </div>
-</div>
+</div> #}
 
 <script src="/script.js"></script>
 {% endblock content %}

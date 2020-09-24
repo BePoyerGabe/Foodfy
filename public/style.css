@@ -6,8 +6,19 @@
   font-family: "Roboto", sans-serif;
 }
 
+html,
+body {
+  height: 100%;
+}
+
+#main {
+  min-height: 100%;
+}
+
 .wrapper-width {
   max-width: 940px;
+  position: relative;
+  min-height: 100%;
 }
 
 header {
@@ -64,6 +75,8 @@ header .links a {
 /*=== DESTAQUES ===*/
 .popular {
   max-width: 940px;
+  overflow: auto;
+  padding-bottom: 60px;
 }
 
 .popular h3 {
@@ -76,6 +89,7 @@ header .links a {
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px;
   margin: 0 auto;
+  padding-bottom: 60px;
 }
 
 .card {
@@ -101,11 +115,12 @@ header .links a {
 }
 
 footer {
-  max-width: 100vw;
+  position: relative;
   width: 100%;
-  background-color: #eee;
-  margin-top: 50px;
+  height: 60px;
+  margin-top: -60px;
   padding: 20px;
+  background-color: #eee;
 }
 
 footer p {

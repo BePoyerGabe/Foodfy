@@ -1,0 +1,11 @@
+{% macro createCard(card) %}
+    <div class="card">
+        <img src="{{card.image}}" alt="{{card.title}}">
+        <div class="card-info">
+            <p>{{card.title}}</p>
+            <span>por
+                {{card.author}}</span>
+        </div>
+    </div>
+
+{% endmacro %}

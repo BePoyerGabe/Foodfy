@@ -16,7 +16,7 @@ nunjucks.configure(__dirname + '/views', {
 })
 
 server.get('/', (req, res) => {
-    res.render('landing')
+    res.render('landing', { data })
 })
 
 server.get('/sobre', (req, res) => {
@@ -24,8 +24,18 @@ server.get('/sobre', (req, res) => {
 })
 
 server.get('/receitas', (req, res) => {
-    res.render('receitas')
+    res.render('receitas', { data })
 })
+
+
+server.get('/receitas/:index', (req, res) => {
+    const index = req.params.index
+
+    const foundRecipe = data[index]
+
+    res.render('detail', { infosRecipe: foundRecipe })
+})
+
 
 server.listen(3000, function () {
     console.log('Server running')
