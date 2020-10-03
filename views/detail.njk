@@ -3,6 +3,8 @@
 {% block head %}
     <link rel="stylesheet" href="/detail.css">
     <title>Detalhes receita</title>
+    
+    
 {% endblock head %}
 
 {% block content %}
@@ -19,9 +21,9 @@
 
             <section class="ingredients">
                 <h2>Ingredientes</h2>
-                <button class="showHide">Mostrar</button>
+                <button id="btIng" class="showHide">MOSTRAR</button>
 
-                <ul>
+                <ul class="hidden">
                     {% for ingredient in infosRecipe.ingredients %}
                         <li>{{ingredient}};</li>
                     {% endfor %}
@@ -30,18 +32,27 @@
 
             <section class="howToDo">
                 <h2>Modo de preparo</h2>
-                <button class="showHide">Mostrar</button>
+                <button id="btHow" class="showHide">MOSTRAR</button>
 
-                <p>{{infosRecipe.preparation}}</p>
+                <p class="detailText hidden">{{infosRecipe.preparation}}</p>
             </section>
 
             <section class="information">
                 <h2>Informações adicionais</h2>
-                <button class="showHide">Mostrar</button>
+                <button id="btInfo" class="showHide">MOSTRAR</button>
 
-                <p>{{infosRecipe.information}}</p>
+                <p class="detailText hidden">
+                    {% if infosRecipe.information %}
+                        {{infosRecipe.information}}
+
+                    {% else %}
+                        Não há nenhuma informação adicional relacionada a essa receita.
+                    {% endif %}
+
+                </p>
             </section>
 
         </article>
     </div>
+    <script src="/js/detail.js"></script>
 {% endblock content %}
