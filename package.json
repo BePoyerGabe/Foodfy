@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "author": "BernardoPoyer <bernardopoyer00@gmail.com>",
   "scripts": {
     "start": "npm-run-all -p nodemon browsersync",
-    "nodemon": "nodemon server.js",
+    "nodemon": "nodemon src/server.js",
     "browsersync": "browser-sync start --proxy http://localhost:5000 --files 'public, views'"
   },
   "repository": {
@@ -13,8 +14,7 @@
     "url": "git+https://github.com/BePoyerGabe/Foodfy.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/BePoyerGabe/Foodfy/issues"
   },
