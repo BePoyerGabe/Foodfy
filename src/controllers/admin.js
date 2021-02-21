@@ -1,21 +1,21 @@
-const data = require("../data.js");
+const data = require('../data.js')
 
-exports.index = (req, res) => {};
+exports.index = (req, res) => {}
 
 exports.show = (req, res) => {
-  res.send("Show");
-};
+  res.send('Show')
+}
 
 exports.create = (req, res) => {
-  res.send("req chegou");
-};
+  res.render('./admin/')
+}
 
 exports.edit = (req, res) => {
-  res.send("Alo editado");
-};
+  res.send('Alo editado')
+}
 
-exports.post = (req, res) => {};
+exports.post = (req, res) => {}
 
-exports.put = (req, res) => {};
+exports.put = (req, res) => {}
 
-exports.delete = (req, res) => {};
+exports.delete = (req, res) => {}
