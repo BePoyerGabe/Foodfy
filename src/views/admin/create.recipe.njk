@@ -1,0 +1,26 @@
+{% extends "./layout.admin.njk" %}
+{% import "../components/_form.admin.njk" as inputs %}
+
+{% block head %}
+    <title>Receitas | Criar</title>
+{% endblock head %}
+
+{% block content %}
+    <form method="POST" action="/admin/recipes">
+        <div class="buttons">
+            <h2>Criando receita</h2>
+            <button type="submit" class="saveBt">Salvar receita</button>
+        </div>
+
+        {{ inputs.formsAdmin("recipeUrl", "Imagem de receita", "", "http://", "text") }}
+        {{ inputs.formsAdmin("ingredients[]", "Ingredientes", "", "placeholder", "text") }}
+        <button>Adcionar novo ingrediente</button>
+
+        {{ inputs.formsAdmin("steps[]", "Modo de preparo", "", "", "text") }}
+        <button>Adicionar novo passo</button>
+
+        <label for="moreInfo">Informações adicionais</label>
+        <textarea name="moreInfo" cols="100" rows="15"></textarea>
+
+    </form>
+{% endblock content %}

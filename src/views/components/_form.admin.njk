@@ -1,0 +1,6 @@
+{% macro formsAdmin(name, textLabel, value, placeholder, type) %}
+    <label for="{{ name }}">{{textLabel}}</label>
+
+    <input type="{{ type }}" name="{{ name }}" placeholder="{{ placeholder }}" value="{{ value }}">
+
+{% endmacro %}

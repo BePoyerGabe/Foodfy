@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   margin: 0 auto;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 html,
@@ -28,7 +28,7 @@ header {
 
 header h1 {
   margin-right: 122.4px;
-  display: inline;
+  display: inline-block;
 }
 
 header .links {
@@ -47,6 +47,7 @@ header .links a {
 
 .banner {
   display: flex;
+  flex-wrap: wrap;
   background: #fbdfdb;
   border-radius: 30px;
   align-items: center;

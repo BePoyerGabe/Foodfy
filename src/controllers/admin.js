@@ -7,14 +7,16 @@ exports.show = (req, res) => {
 }
 
 exports.create = (req, res) => {
-  res.render('./admin/')
+  res.render('./admin/create.recipe.njk')
 }
 
 exports.edit = (req, res) => {
   res.send('Alo editado')
 }
 
-exports.post = (req, res) => {}
+exports.post = (req, res) => {
+  res.send(req.body)
+}
 
 exports.put = (req, res) => {}
 
