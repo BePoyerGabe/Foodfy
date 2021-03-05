@@ -1,3 +1,14 @@
 {
-    "recipes": []
+  "recipes": [
+    {
+      "recipeUrl": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/receitas/burger.png",
+      "ingredients": [
+        "3 kg de carne moída (escolha uma carne magra e macia)"
+      ],
+      "steps": [
+        "Misture todos os ingredientes muito bem e amasse para que fique tudo muito bem misturado."
+      ],
+      "moreInfo": "sfgfd"
+    }
+  ]
 }

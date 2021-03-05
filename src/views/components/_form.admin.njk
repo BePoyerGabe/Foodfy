@@ -1,6 +1,3 @@
-{% macro formsAdmin(name, textLabel, value, placeholder, type) %}
-    <label for="{{ name }}">{{textLabel}}</label>
-
+{% macro formsAdmin(name, value, placeholder, type) %}
     <input type="{{ type }}" name="{{ name }}" placeholder="{{ placeholder }}" value="{{ value }}">
-
 {% endmacro %}

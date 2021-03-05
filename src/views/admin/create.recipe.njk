@@ -12,15 +12,28 @@
             <button type="submit" class="saveBt">Salvar receita</button>
         </div>
 
-        {{ inputs.formsAdmin("recipeUrl", "Imagem de receita", "", "http://", "text") }}
-        {{ inputs.formsAdmin("ingredients[]", "Ingredientes", "", "placeholder", "text") }}
-        <button>Adcionar novo ingrediente</button>
+        <label for="recipeUrl">Imagem da receita</label>
+        {{ inputs.formsAdmin("recipeUrl", "", "http://", "text") }}
 
-        {{ inputs.formsAdmin("steps[]", "Modo de preparo", "", "", "text") }}
-        <button>Adicionar novo passo</button>
+        <label for="ingredients[]">Ingredientes</label>
+        <div id="ingredient">
+            <div class="ingredients">
+                {{ inputs.formsAdmin("ingredients[]", "", "placeholder", "text") }}
+            </div>
+        </div>
+        <button id="btNewIngredient" type="button">Adcionar novo ingrediente</button>
+
+        <label for="steps[]">Modo de preparo</label>
+        <div id="stepsContainer">
+            <div class="step">
+                {{ inputs.formsAdmin("steps[]", "", "", "text") }}
+            </div>
+        </div>
+        <button id="btNewStep" type="button">Adicionar novo passo</button>
 
         <label for="moreInfo">Informações adicionais</label>
         <textarea name="moreInfo" cols="100" rows="15"></textarea>
-
     </form>
+
+    <script src="/js/admin/create-recipe.js"></script>
 {% endblock content %}
