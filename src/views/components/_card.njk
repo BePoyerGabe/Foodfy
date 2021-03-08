@@ -1,10 +1,15 @@
-{% macro createCard(card) %}
+{% macro createCard(card, haveBtn) %}
     <div class="card">
-        <img src="{{card.image}}" alt="{{card.title}}">
+        <div>
+            <img src="{{card.image}}" alt="{{card.title}}">
+        </div>
         <div class="card-info">
             <p>{{card.title}}</p>
             <span>por
                 {{card.author}}</span>
+            {% if haveBtn %}
+                <button type="button">Visualizar</button>
+            {% endif %}
         </div>
     </div>
 

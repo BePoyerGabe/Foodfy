@@ -1,0 +1,19 @@
+{% extends "./layout.admin.njk" %}
+{% import "../components/_card.njk" as cards %}
+
+{% block head %}
+    <title>Receitas | Gerenciar</title>
+    <link rel="stylesheet" href="/styles/admin/listRecipe.admin.css">
+{% endblock head %}
+
+{% block content %}
+    <div class="wrapper-width">
+
+        <h1>Gerenciar receitas</h1>
+        <div class="cards">
+            {% for recipe in recipes %}
+                {{ cards.createCard(recipe, true) }}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}

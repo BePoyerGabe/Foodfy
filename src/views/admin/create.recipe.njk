@@ -3,17 +3,18 @@
 
 {% block head %}
     <title>Receitas | Criar</title>
+    <link rel="stylesheet" href="/styles/admin/forms.admin.css"/>
 {% endblock head %}
 
 {% block content %}
     <form method="POST" action="/admin/recipes">
         <div class="container">
-            <h2>Criando receita</h2>
+            <h2>Criar receita</h2>
             <button type="submit" class="buttons saveBt">Salvar receita</button>
         </div>
 
-        <label for="recipeUrl">Imagem da receita</label>
-        {{ inputs.formsAdmin("recipeUrl", "", "http://", "text") }}
+        <label for="image">Imagem da receita</label>
+        {{ inputs.formsAdmin("image", "", "http://", "text") }}
 
         <label for="ingredients[]">Ingredientes</label>
         <div id="ingredient">

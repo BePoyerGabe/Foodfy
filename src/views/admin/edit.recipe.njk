@@ -2,13 +2,14 @@
 {% import "../components/_form.admin.njk" as inputs %}
 
 {% block head %}
+    <link rel="stylesheet" href="/styles/admin/forms.admin.css">
     <title>Receitas | Editar</title>
 {% endblock head %}
 
 {% block content %}
     <form method="POST" action="/admin/recipes?_method=PUT">
         <div class="container">
-            <h2>Editando receita</h2>
+            <h2>Editar receita</h2>
 
             <div>
                 <button type="submit" class="buttons deleteBt">Deletar</button>

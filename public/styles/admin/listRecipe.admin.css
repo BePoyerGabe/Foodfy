@@ -1,0 +1,26 @@
+h1 {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.cards .card {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card div:first-child {
+  height: 80px;
+  width: 172px;
+  margin-right: 20px;
+}
+
+.card div:first-child img {
+  width: 100%;
+  height: auto;
+}

@@ -12,7 +12,7 @@ routes.get('/about', (req, res) => {
 })
 
 routes.get('/recipes', (req, res) => {
-  res.render('recipes', {data})
+  res.render('public/recipes', {data})
 })
 
 routes.get('/receitas/:index', (req, res) => {
