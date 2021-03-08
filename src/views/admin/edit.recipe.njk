@@ -2,14 +2,18 @@
 {% import "../components/_form.admin.njk" as inputs %}
 
 {% block head %}
-    <title>Receitas | Criar</title>
+    <title>Receitas | Editar</title>
 {% endblock head %}
 
 {% block content %}
-    <form method="POST" action="/admin/recipes">
+    <form method="POST" action="/admin/recipes?_method=PUT">
         <div class="container">
-            <h2>Criando receita</h2>
-            <button type="submit" class="buttons saveBt">Salvar receita</button>
+            <h2>Editando receita</h2>
+
+            <div>
+                <button type="submit" class="buttons deleteBt">Deletar</button>
+                <button type="submit" class="buttons saveBt">Salvar receita</button>
+            </div>
         </div>
 
         <label for="recipeUrl">Imagem da receita</label>
@@ -34,6 +38,4 @@
         <label for="moreInfo">Informações adicionais</label>
         <textarea name="moreInfo" cols="100" rows="15"></textarea>
     </form>
-
-    <script src="/js/admin/create-recipe.js"></script>
 {% endblock content %}

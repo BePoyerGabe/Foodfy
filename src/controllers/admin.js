@@ -1,18 +1,20 @@
 const fs = require('fs')
 const dataJson = require('../data.json')
 
-exports.index = (req, res) => {}
+exports.index = (req, res) => {
+  const recipes = dataJson.recipes
 
-exports.show = (req, res) => {
-  res.send('Show')
+  res.render('admin/recipes', {recipes})
 }
 
+exports.show = (req, res) => {}
+
 exports.create = (req, res) => {
-  res.render('./admin/create.recipe.njk')
+  res.render('admin/create.recipe.njk')
 }
 
 exports.edit = (req, res) => {
-  res.send('Alo editado')
+  res.render('admin/edit.recipe.njk')
 }
 
 exports.post = function (req, res) {
