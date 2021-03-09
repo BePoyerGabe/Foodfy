@@ -1,8 +1,6 @@
 {% macro createCard(card, haveBtn) %}
     <div class="card">
-        <div>
-            <img src="{{card.image}}" alt="{{card.title}}">
-        </div>
+        <div style="background: url({{ card.image }}) no-repeat center center/cover;"></div>
         <div class="card-info">
             <p>{{card.title}}</p>
             <span>por

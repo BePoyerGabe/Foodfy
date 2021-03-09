@@ -1,0 +1,57 @@
+{% extends "./layout.admin.njk" %}
+
+{% block head %}
+    <title>Receita | Detalhes</title>
+    <link rel="stylesheet" href="/styles/admin/showRecipe.admin.css">
+{% endblock head %}
+
+{% block content %}
+    <div class="acao">
+        <h2>Receita:
+            {{ recipe.title }}</h2>
+        <a href="/admin/recipes/{{recipe.index}}/edit">Editar receita</a>
+    </div>
+    <main>
+        <section id="presentation">
+            <img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}">
+
+            <h1>{{recipe.title}}</h1>
+            <p>por
+                {{recipe.author}}</p>
+
+        </section>
+
+        <section class="ingredients">
+            <h2>Ingredientes</h2>
+
+            <ul>
+                {% for ingredient in recipe.ingredients %}
+                    <li>{{ingredient}};</li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <section class="howToDo">
+            <h2>Modo de preparo</h2>
+
+            <p class="detailText">
+                {{recipe.preparation}}
+            </p>
+        </section>
+
+        <section class="information">
+            <h2>Informações adicionais</h2>
+
+            <p class="detailText">
+                {% if recipe.information %}
+                    {{recipe.information}}
+
+                {% else %}
+                    Não há nenhuma informação adicional relacionada a essa receita.
+                {% endif %}
+
+            </p>
+        </section>
+
+    </main>
+{% endblock content %}

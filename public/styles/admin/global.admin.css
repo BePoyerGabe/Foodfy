@@ -5,11 +5,6 @@
   font-family: 'Roboto';
 }
 
-html,
-body {
-  height: 100%;
-}
-
 .wrapper-width {
   margin: 0 auto;
   max-width: 940px;

@@ -4,10 +4,17 @@ const dataJson = require('../data.json')
 exports.index = (req, res) => {
   const recipes = dataJson.recipes
 
-  res.render('admin/list.recipe.njk', {recipes})
+  res.render('admin/list.recipe.njk', { recipes })
 }
 
-exports.show = (req, res) => {}
+exports.show = (req, res) => {
+  const { id } = req.params
+
+  let recipe = dataJson.recipes[id]
+  recipe.index = id
+
+  res.render('admin/show.recipe.njk', { recipe })
+}
 
 exports.create = (req, res) => {
   res.render('admin/create.recipe.njk')
