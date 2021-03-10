@@ -27,7 +27,8 @@ exports.create = (req, res) => {
 exports.edit = (req, res) => {
   const index = req.params.id
 
-  const recipe = dataJson.recipes[index]
+  let recipe = dataJson.recipes[index]
+  recipe.index = index
   res.render('admin/edit.recipe.njk', { recipe })
 }
 
@@ -51,6 +52,22 @@ exports.post = function (req, res) {
   })
 }
 
-exports.put = (req, res) => {}
+exports.put = (req, res) => {
+  res.send(req.body)
+}
 
-exports.delete = (req, res) => {}
+exports.delete = (req, res) => {
+  const { indexDelete } = req.body
+
+  const newRecipeArray = dataJson.recipes.filter((recipe, index) => {
+    if (index != indexDelete) return recipe
+  })
+
+  dataJson.recipes = newRecipeArray
+
+  fs.writeFile('src/data.json', JSON.stringify(dataJson, null, 2), (err) => {
+    if (err) return res.send('Error: ' + err)
+
+    res.redirect('/admin/recipes')
+  })
+}

@@ -7,15 +7,22 @@
 {% endblock head %}
 
 {% block content %}
-    <form method="POST" action="/admin/recipes?_method=PUT">
-        <div class="container">
-            <h2>Editar receita</h2>
+    <form id="form-delete" method="POST" action="/admin/recipes?_method=DELETE">
+        <input type="hidden" name="indexDelete" value="{{ recipe.index }}">
 
-            <div>
-                <button type="submit" class="buttons deleteBt">Deletar</button>
-                <button type="submit" class="buttons saveBt">Salvar receita</button>
-            </div>
+    </form>
+
+    <div class="container">
+        <h2>Editar receita</h2>
+
+        <div>
+            <button type="submit" form="form-delete" class="buttons deleteBt">Deletar</button>
+            <button type="submit" form="form-update" class="buttons saveBt">Salvar receita</button>
         </div>
+    </div>
+
+    <form id="form-update" method="POST" action="/admin/recipes?_method=PUT">
+        <input type="hidden" name="index" value="{{ recipe.index }}">
 
         <label for="recipeUrl">Imagem da receita</label>
         {{ inputs.formsAdmin("recipeUrl", recipe.image, "http://", "text") }}

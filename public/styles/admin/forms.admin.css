@@ -3,7 +3,7 @@ form {
   margin-top: 55px;
 }
 
-form .container {
+.container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -11,14 +11,14 @@ form .container {
   margin-bottom: 30px;
 }
 
-form .container h2 {
+.container h2 {
   font-weight: bold;
   font-size: 24px;
   line-height: 24px;
   color: #111111;
 }
 
-form .buttons {
+.buttons {
   font-size: 16px;
   line-height: 19px;
   padding: 9px 20px;
@@ -28,13 +28,13 @@ form .buttons {
   cursor: pointer;
 }
 
-form .deleteBt {
+.deleteBt {
   background: #dc4747;
   color: #fff;
   margin-right: 10px;
 }
 
-form .saveBt {
+.saveBt {
   color: #fff;
   background: #6558c3;
 }
