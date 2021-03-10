@@ -23,7 +23,7 @@
 
                 {% for card in data %}
                     {% if loop.index0 < 6 %}
-                        {{myCards.createCard(card)}}
+                        {{myCards.createCard(card, false)}}
                     {% endif %}
                 {% endfor %}
 

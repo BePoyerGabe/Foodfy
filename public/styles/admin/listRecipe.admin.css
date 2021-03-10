@@ -32,10 +32,11 @@
   color: #777;
 }
 
-.card .card-info button {
+.card .card-info a {
   display: block;
   border: 0px;
   outline: 0px;
+  text-decoration: none;
   background: transparent;
   margin-top: 10px;
   font-size: 14px;

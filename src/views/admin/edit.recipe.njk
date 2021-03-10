@@ -18,25 +18,29 @@
         </div>
 
         <label for="recipeUrl">Imagem da receita</label>
-        {{ inputs.formsAdmin("recipeUrl", "", "http://", "text") }}
+        {{ inputs.formsAdmin("recipeUrl", recipe.image, "http://", "text") }}
 
         <label for="ingredients[]">Ingredientes</label>
         <div id="ingredient">
             <div class="ingredients">
-                {{ inputs.formsAdmin("ingredients[]", "", "placeholder", "text") }}
+                {% for ingredient in recipe.ingredients %}
+                    {{ inputs.formsAdmin("ingredients[]", ingredient, "placeholder", "text") }}
+                {% endfor %}
             </div>
         </div>
         <button id="btNewIngredient" type="button">Adcionar novo ingrediente</button>
 
-        <label for="steps[]">Modo de preparo</label>
+        <label for="preparation[]">Modo de preparo</label>
         <div id="stepsContainer">
             <div class="step">
-                {{ inputs.formsAdmin("steps[]", "", "", "text") }}
+                {% for preparation in recipe.preparation %}
+                    {{ inputs.formsAdmin("preparation[]", preparation, "", "text") }}
+                {% endfor %}
             </div>
         </div>
         <button id="btNewStep" type="button">Adicionar novo passo</button>
 
         <label for="moreInfo">Informações adicionais</label>
-        <textarea name="moreInfo" cols="100" rows="15"></textarea>
+        <textarea name="moreInfo" cols="100" rows="15">{{ recipe.information }}</textarea>
     </form>
 {% endblock content %}

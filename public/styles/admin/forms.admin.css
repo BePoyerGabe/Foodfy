@@ -58,6 +58,7 @@ form input {
   font-size: 16px;
   padding: 0 16px;
   outline: none;
+  margin-bottom: 5px;
 }
 
 form :is(input:focus, textarea:focus) {

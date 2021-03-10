@@ -24,16 +24,16 @@
         </div>
         <button id="btNewIngredient" type="button">Adcionar novo ingrediente</button>
 
-        <label for="steps[]">Modo de preparo</label>
+        <label for="preparation[]">Modo de preparo</label>
         <div id="stepsContainer">
             <div class="step">
-                {{ inputs.formsAdmin("steps[]", "", "", "text") }}
+                {{ inputs.formsAdmin("preparation[]", "", "", "text") }}
             </div>
         </div>
         <button id="btNewStep" type="button">Adicionar novo passo</button>
 
-        <label for="moreInfo">Informações adicionais</label>
-        <textarea name="moreInfo" cols="100" rows="15"></textarea>
+        <label for="information">Informações adicionais</label>
+        <textarea name="information" cols="100" rows="15"></textarea>
     </form>
 
     <script src="/js/admin/create-recipe.js"></script>
