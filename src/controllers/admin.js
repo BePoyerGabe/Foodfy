@@ -53,7 +53,24 @@ exports.post = function (req, res) {
 }
 
 exports.put = (req, res) => {
-  res.send(req.body)
+  const { recipeToUpdate } = req.body
+
+  if (recipeToUpdate < 0 || recipeToUpdate > dataJson.recipes.length)
+    return res.send('Invalid index array')
+
+  delete req.body.recipeToUpdate
+
+  const oldRecipe = dataJson.recipes[recipeToUpdate]
+  dataJson.recipes[recipeToUpdate] = {
+    ...oldRecipe,
+    ...req.body,
+  }
+
+  fs.writeFile('src/data.json', JSON.stringify(dataJson, null, 2), (err) => {
+    if (err) return res.send('Error: ' + err)
+
+    res.redirect('/admin/recipes')
+  })
 }
 
 exports.delete = (req, res) => {

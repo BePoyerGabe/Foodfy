@@ -22,10 +22,10 @@
     </div>
 
     <form id="form-update" method="POST" action="/admin/recipes?_method=PUT">
-        <input type="hidden" name="index" value="{{ recipe.index }}">
+        <input type="hidden" name="recipeToUpdate" value="{{ recipe.index }}">
 
-        <label for="recipeUrl">Imagem da receita</label>
-        {{ inputs.formsAdmin("recipeUrl", recipe.image, "http://", "text") }}
+        <label for="image">Imagem da receita</label>
+        {{ inputs.formsAdmin("image", recipe.image, "http://", "text") }}
 
         <label for="ingredients[]">Ingredientes</label>
         <div id="ingredient">
@@ -47,8 +47,8 @@
         </div>
         <button id="btNewStep" type="button">Adicionar novo passo</button>
 
-        <label for="moreInfo">Informações adicionais</label>
-        <textarea name="moreInfo" cols="100" rows="15">{{ recipe.information }}</textarea>
+        <label for="information">Informações adicionais</label>
+        <textarea name="information" cols="100" rows="15">{{ recipe.information }}</textarea>
     </form>
     <script src="/js/admin/create-recipe.js"></script>
 
