@@ -8,8 +8,6 @@ document.getElementById('btNewIngredient').addEventListener('click', () => {
 
   newIngredient.children[0].value = ''
   ingredient.appendChild(newIngredient)
-
-  console.log(newIngredient)
 })
 
 document.getElementById('btNewStep').addEventListener('click', () => {

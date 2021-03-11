@@ -29,25 +29,27 @@
 
         <label for="ingredients[]">Ingredientes</label>
         <div id="ingredient">
-            <div class="ingredients">
-                {% for ingredient in recipe.ingredients %}
+            {% for ingredient in recipe.ingredients %}
+                <div class="ingredients">
                     {{ inputs.formsAdmin("ingredients[]", ingredient, "placeholder", "text") }}
-                {% endfor %}
-            </div>
+                </div>
+            {% endfor %}
         </div>
         <button id="btNewIngredient" type="button">Adcionar novo ingrediente</button>
 
         <label for="preparation[]">Modo de preparo</label>
         <div id="stepsContainer">
-            <div class="step">
-                {% for preparation in recipe.preparation %}
+            {% for preparation in recipe.preparation %}
+                <div class="step">
                     {{ inputs.formsAdmin("preparation[]", preparation, "", "text") }}
-                {% endfor %}
-            </div>
+                </div>
+            {% endfor %}
         </div>
         <button id="btNewStep" type="button">Adicionar novo passo</button>
 
         <label for="moreInfo">Informações adicionais</label>
         <textarea name="moreInfo" cols="100" rows="15">{{ recipe.information }}</textarea>
     </form>
+    <script src="/js/admin/create-recipe.js"></script>
+
 {% endblock content %}
